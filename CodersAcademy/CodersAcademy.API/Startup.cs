@@ -1,3 +1,4 @@
+using AutoMapper;
 using CodersAcademy.API.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -37,6 +38,7 @@ namespace CodersAcademy.API
             });
 
             services.AddScoped<AlbumRepository>();
+            services.AddAutoMapper(typeof(Startup).Assembly); // O AutoMapper varre o assembly procurando o profile
 
             services.AddSwaggerGen(c =>
             {
