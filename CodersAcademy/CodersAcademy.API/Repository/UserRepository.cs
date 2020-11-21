@@ -40,7 +40,13 @@ namespace CodersAcademy.API.Repository
                     .Where(x => x.Id == id)
                     .FirstOrDefaultAsync();
 
-        public async Task<IList<User>> GetAllAsync() => await Context.Users.ToListAsync();
+        public async Task<IList<User>> GetAllAsync() 
+            => await Context
+                    .Users
+                    .Include(x => x.FavoriteMusics)
+                    .ThenInclude(x => x.Music)
+                    .ThenInclude(x => x.Album)
+                    .ToListAsync();
 
         public async Task UpdateAsync(User user)
         {
