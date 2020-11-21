@@ -38,6 +38,7 @@ namespace CodersAcademy.API
             });
 
             services.AddScoped<AlbumRepository>();
+            services.AddScoped<UserRepository>();
             services.AddAutoMapper(typeof(Startup).Assembly); // O AutoMapper varre o assembly procurando o profile
 
             services.AddSwaggerGen(c =>
