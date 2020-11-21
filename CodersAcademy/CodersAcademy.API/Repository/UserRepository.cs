@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CodersAcademy.API.Model;
@@ -29,6 +30,28 @@ namespace CodersAcademy.API.Repository
                     .ThenInclude(x => x.Album) // Carrega propriedade Album que esta dentro de Music
                     .Where(x => x.Password == password && x.Email == email)
                     .FirstOrDefaultAsync();
-        
+
+        public async Task<User> GetUserAsync(Guid id)
+            => await Context
+                    .Users
+                    .Include(x => x.FavoriteMusics)
+                    .ThenInclude(x => x.Music)
+                    .ThenInclude(x => x.Album)
+                    .Where(x => x.Id == id)
+                    .FirstOrDefaultAsync();
+
+        public async Task<IList<User>> GetAllAsync() => await Context.Users.ToListAsync();
+
+        public async Task UpdateAsync(User user)
+        {
+            Context.Users.Update(user);
+            await Context.SaveChangesAsync();
+        }
+
+        public async Task RemoveAsync(User user)
+        {
+            Context.Remove(user);
+            await Context.SaveChangesAsync();
+        }
     }
 }
