@@ -33,7 +33,7 @@ namespace CodersAcademy.API.Controllers
             var passwordBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(request.Password));
             var user = await UserRepository.AuthenticateAsync(request.Email, passwordBase64);
 
-            if(user == null) return UnprocessableEntity(new {
+            if(user == null) return Unauthorized(new {
                 Message = "Invalid Email/Password"
             });
 
