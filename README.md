@@ -11,4 +11,5 @@ Aplicação back end construída durante o bootcamp Coders Academy. O front end 
 - :white_check_mark:Uso consciente dos [status codes do HTTP](https://www.restapitutorial.com/httpstatuscodes.html) para respostas de APIs
 - :white_check_mark:Uso do [Swagger](https://swagger.io/) para documentação de APIs
 - :white_check_mark:Uso do [Auto Mapper](https://automapper.org/) para transferências de dados entre objetos
+- :white_check_mark:Automação de testes com GitHub Actions
 - :white_check_mark:Deploy no Azure
