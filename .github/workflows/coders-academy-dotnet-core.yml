@@ -21,6 +21,7 @@ jobs:
       run: dotnet build CodersAcademy/CodersAcademy.sln --configuration Release --no-restore
     - name: Test
       run: dotnet test CodersAcademy/CodersAcademy.sln --no-restore --verbosity normal
+      
   sonarCloud:
     name: SonarCloud
     runs-on: windows-latest
