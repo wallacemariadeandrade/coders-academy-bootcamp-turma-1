@@ -36,7 +36,7 @@ jobs:
       - name: Build
         shell: powershell
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} #TOken
         run: |
           .\.sonar\scanner\dotnet-sonarscanner begin /k:"wallacemariadeandrade_coders-academy-bootcamp-turma-1" /o:"wallacemariadeandrade" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
           dotnet build CodersAcademy/CodersAcademy.sln
