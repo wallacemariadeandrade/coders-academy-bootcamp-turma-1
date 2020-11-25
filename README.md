@@ -1,5 +1,12 @@
 # Bootcamp Coders Academy - Back End ASP NET Core 5
 
+![.NET Core](https://github.com/wallacemariadeandrade/coders-academy-bootcamp-turma-1/workflows/.NET%20Core/badge.svg)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=wallacemariadeandrade_coders-academy-bootcamp-turma-1&metric=bugs)](https://sonarcloud.io/dashboard?id=wallacemariadeandrade_coders-academy-bootcamp-turma-1)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=wallacemariadeandrade_coders-academy-bootcamp-turma-1&metric=code_smells)](https://sonarcloud.io/dashboard?id=wallacemariadeandrade_coders-academy-bootcamp-turma-1)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=wallacemariadeandrade_coders-academy-bootcamp-turma-1&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=wallacemariadeandrade_coders-academy-bootcamp-turma-1)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=wallacemariadeandrade_coders-academy-bootcamp-turma-1&metric=sqale_index)](https://sonarcloud.io/dashboard?id=wallacemariadeandrade_coders-academy-bootcamp-turma-1)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=wallacemariadeandrade_coders-academy-bootcamp-turma-1&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=wallacemariadeandrade_coders-academy-bootcamp-turma-1)
+
 Aplicação back end construída durante o bootcamp Coders Academy. O front end está disponível [aqui](https://github.com/wallacemariadeandrade/template-coders-academy-bootcamp-turma-1)
 
 ## Tecnologias e frameworks abordados
