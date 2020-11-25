@@ -5,6 +5,21 @@ on:
     branches: [main]
     paths: "CodersAcademy/**"
 jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 5.0.100
+      - name: Install dependencies
+        run: dotnet restore CodersAcademy/CodersAcademy.sln
+      - name: Build
+        run: dotnet build CodersAcademy/CodersAcademy.sln --configuration Release --no-restore
+      - name: Test
+        run: dotnet test CodersAcademy/CodersAcademy.sln --no-restore --verbosity normal
   sonarCloud:
     name: SonarCloud
     runs-on: windows-latest
@@ -22,6 +37,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          .\.sonar\scanner\dotnet-sonarscanner begin /k:"wallacemariadeandrade_coders-academy-bootcamp-turma-1" /o:"wallacemariadeandrade" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+          .\.sonar\scanner\dotnet-sonarscanner begin /k:"wallacemariadeandrade_coders-academy-bootcamp-turma-1" /o:"wallacemariadeandrade" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
           dotnet build CodersAcademy/CodersAcademy.sln
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
