@@ -27,7 +27,7 @@ namespace CodersAcademy.API.Model
                             .FirstOrDefault(x => x.MusicId == music.Id);
             
             if(favMusic == null)
-                throw new ArgumentNullException("Music not found on the favorite list.");
+                throw new ArgumentNullException(nameof(music), "Music not found on the favorite list.");
 
             FavoriteMusics.Remove(favMusic);
         }
