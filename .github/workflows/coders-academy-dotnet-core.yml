@@ -51,6 +51,6 @@ jobs:
             SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           shell: powershell
           run: |
-            .\.sonar\scanner\dotnet-sonarscanner begin /k:"wallacemariadeandrade_coders-academy-bootcamp-turma-1" /o:"wallacemariadeandrade" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
+            .\.sonar\scanner\dotnet-sonarscanner begin /k:"wallacemariadeandrade_coders-academy-bootcamp-turma-1" /o:"wallacemariadeandrade" /d:sonar.login="505d816c2fcba1d8dd2a7d28eb74a38d13a81ecf" /d:sonar.host.url="https://sonarcloud.io"
             dotnet build CodersAcademy/CodersAcademy.sln
-            .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+            .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="505d816c2fcba1d8dd2a7d28eb74a38d13a81ecf"
