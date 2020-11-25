@@ -29,13 +29,13 @@ jobs:
         - name: Install SonarCloud scanner
           shell: powershell
           run: |
-            dotnet tool install --global dotnet-sonarscanner --version 5.0.4 --tool-path .\.sonar\scanner
+            dotnet tool install --global dotnet-sonarscanner --version 5.0.4
         - name: Build and analyze
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
             SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           shell: powershell
           run: |
-            .\.sonar\scanner\dotnet sonarscanner begin /k:"wallacemariadeandrade_coders-academy-bootcamp-turma-1" /o:"wallacemariadeandrade" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+            dotnet sonarscanner begin /k:"wallacemariadeandrade_coders-academy-bootcamp-turma-1" /o:"wallacemariadeandrade" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
             dotnet build CodersAcademy/CodersAcademy.sln
-            .\.sonar\scanner\dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+            dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
