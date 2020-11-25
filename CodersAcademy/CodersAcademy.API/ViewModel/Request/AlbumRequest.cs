@@ -24,12 +24,13 @@ namespace CodersAcademy.API.ViewModel.Request
             if(Musics == null) 
                 yield return new ValidationResult("Album must contain at least one music.");
 
-            if(Musics.Any() == false) 
+            if(!Musics.Any()) 
                 yield return new ValidationResult("Album must contain at least one music."); // Valida se ha uma musica pelo menos
             // Valida todas as propriedadaes do objeto musica
             foreach(var music in Musics)
             {
-                if(Validator.TryValidateObject(music, new ValidationContext(music), result) == false)   
+                // result armazena cada validação com falha
+                if(!Validator.TryValidateObject(music, new ValidationContext(music), result))   
                     yield return result.First();
             }
         }

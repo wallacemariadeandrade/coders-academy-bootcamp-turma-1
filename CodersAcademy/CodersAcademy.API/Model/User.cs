@@ -24,11 +24,10 @@ namespace CodersAcademy.API.Model
         public void RemoveFavoriteMusic(Music music)
         {
             var favMusic = FavoriteMusics
-                            .Where(x => x.MusicId == music.Id)
-                            .FirstOrDefault();
+                            .FirstOrDefault(x => x.MusicId == music.Id);
             
             if(favMusic == null)
-                throw new Exception("Music not found on the favorite list.");
+                throw new ArgumentNullException("Music not found on the favorite list.");
 
             FavoriteMusics.Remove(favMusic);
         }
