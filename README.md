@@ -21,3 +21,7 @@ Aplicação back end construída durante o bootcamp Coders Academy. O front end 
 - :white_check_mark:Automação de testes com GitHub Actions
 - :white_check_mark:Qualidade de software com SonarCloud
 - :white_check_mark:Deploy no Azure
+
+## Melhorias pessoais
+
+- :white_check_mark:Adicionadas badges ao README do repositório
