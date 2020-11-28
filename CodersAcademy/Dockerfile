@@ -11,7 +11,7 @@ FROM build AS publish
 WORKDIR /CodersAcademy/CodersAcademy.API
 RUN dotnet publish -c Release -o /CodersAcademy/publish
 
-FROM mcr.microsoft.com/dotnet/aspnet:5.0.100 AS runtime
+FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS runtime
 WORKDIR /CodersAcademy
 COPY --from=publish /CodersAcademy/publish .
 # ENTRYPOINT ["dotnet", "Colors.API.dll"]
