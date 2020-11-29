@@ -65,6 +65,7 @@ namespace CodersAcademy.API
                         }
                     }
                 );
+                await context.SaveChangesAsync();
             }
         }
     }
