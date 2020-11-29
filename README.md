@@ -7,7 +7,9 @@
 [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=wallacemariadeandrade_coders-academy-bootcamp-turma-1&metric=sqale_index)](https://sonarcloud.io/dashboard?id=wallacemariadeandrade_coders-academy-bootcamp-turma-1)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=wallacemariadeandrade_coders-academy-bootcamp-turma-1&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=wallacemariadeandrade_coders-academy-bootcamp-turma-1)
 
-Aplicação back end construída durante o bootcamp Coders Academy. O front end está disponível [aqui](https://github.com/wallacemariadeandrade/template-coders-academy-bootcamp-turma-1)
+Aplicação back end construída durante o bootcamp Coders Academy. O front end está disponível [aqui](https://github.com/wallacemariadeandrade/template-coders-academy-bootcamp-turma-1).
+
+O backend está publicado no Heroku e disponível [aqui](https://codersacademybackend.herokuapp.com/swagger/index.html).
 
 ## Tecnologias e frameworks abordados
 
@@ -25,3 +27,4 @@ Aplicação back end construída durante o bootcamp Coders Academy. O front end 
 ## Melhorias pessoais
 
 - :white_check_mark:Adicionadas badges ao README do repositório
+- :white_check_mark:Deploy automatizado no [Heroku](https://www.heroku.com/) via GitHub Actions
