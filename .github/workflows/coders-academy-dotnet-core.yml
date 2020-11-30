@@ -19,7 +19,8 @@ jobs:
       - name: Build
         run: dotnet build CodersAcademy/CodersAcademy.sln --configuration Release --no-restore
       - name: Test
-        run: dotnet test CodersAcademy/CodersAcademy.sln --no-restore --verbosity normal
+        run: dotnet test CodersAcademy/CodersAcademy.sln --blame --no-restore --verbosity normal /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=opencover.xml
+
   sonarCloud:
     name: SonarCloud
     runs-on: windows-latest
