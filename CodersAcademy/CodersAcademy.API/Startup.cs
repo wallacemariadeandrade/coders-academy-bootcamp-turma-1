@@ -30,9 +30,9 @@ namespace CodersAcademy.API
                 options.AddPolicy(
                     name: allowedOrigins,
                     builder => {
-                        builder.WithOrigins(
-                            this.Configuration.GetSection("ConnectionStrings:AllowedOrigins").Get<string[]>()
-                        );
+                        builder.WithOrigins(this.Configuration.GetSection("ConnectionStrings:AllowedOrigins").Get<string[]>())
+                                .AllowAnyHeader()
+                                .AllowAnyMethod();
                     }
                 );
             });
