@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using AutoMapper;
 using CodersAcademy.API.Repository;
 using Microsoft.AspNetCore.Builder;
@@ -12,6 +14,8 @@ namespace CodersAcademy.API
 {
     public class Startup
     {
+        private readonly string allowedOrigins = "_allowedOrigins";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -22,6 +26,16 @@ namespace CodersAcademy.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options => {
+                options.AddPolicy(
+                    name: allowedOrigins,
+                    builder => {
+                        builder.WithOrigins(
+                            this.Configuration.GetSection("ConnectionStrings:AllowedOrigins").Get<string[]>()
+                        );
+                    }
+                );
+            });
 
             services.AddControllers();
 
@@ -59,6 +73,8 @@ namespace CodersAcademy.API
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Coders Academy Bootcamp"));
 
             app.UseRouting();
+
+            app.UseCors(allowedOrigins);
 
             app.UseAuthorization();
 
